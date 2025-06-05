@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>Przemek Jurewicz</Authors>
+    <PackageId>IssueServiceLibrary</PackageId>
+    <Description>This is library for "Any Issues?" API</Description>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>

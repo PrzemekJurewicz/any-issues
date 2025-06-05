@@ -1,0 +1,36 @@
+@Any_Issues_HostAddress = http://localhost:5183
+@issueNumber = 1
+
+GET {{Any_Issues_HostAddress}}/api/bitbucket/issues
+Accept: application/json
+
+###
+
+POST {{Any_Issues_HostAddress}}/api/bitbucket/issues
+Accept: application/json
+
+{
+    "title": "New Api Post Issue WITH DESCRIPTION!",
+    "content":
+    {
+        "raw": "This is a new issue created via my API."
+    }
+}
+
+###
+
+PUT {{Any_Issues_HostAddress}}/api/bitbucket/issues/{{issueNumber}}
+Accept: application/json
+
+{
+    "title": "Modified issue WITH DESCRIPTION!",
+    "content":
+    {
+        "raw": "Modified by API."
+    }
+}
+
+###
+
+DELETE {{Any_Issues_HostAddress}}/api/bitbucket/issues/{{issueNumber}}
+Accept: application/json

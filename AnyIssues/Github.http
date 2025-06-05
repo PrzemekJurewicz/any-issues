@@ -1,0 +1,31 @@
+@Any_Issues_HostAddress = http://localhost:5183
+@issueNumber = 1
+
+GET {{Any_Issues_HostAddress}}/api/github/issues/{{issueNumber}}
+Accept: application/json
+
+###
+
+POST {{Any_Issues_HostAddress}}/api/github/issues
+Accept: application/json
+
+{
+  "title": "New Issue",
+  "body": "This is a new issue created via my API."
+}
+
+###
+
+PUT {{Any_Issues_HostAddress}}/api/github/issues/{{issueNumber}}
+Accept: application/json
+
+{
+  "title": "Updated Issue vol 2",
+  "body": "This is the updated body of the issue."
+}
+
+###
+// This request will close the issue by patching it's state, not delete it.
+
+DELETE {{Any_Issues_HostAddress}}/api/github/issues/{{issueNumber}}
+Accept: application/json

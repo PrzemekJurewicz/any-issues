@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        
+        <!-- The following line is used to enable the use of user secrets in development. -->
+        <UserSecretsId>22f77084-295b-4266-9a06-ddadb1ccac75</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0-preview.4.25258.110"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ServicesLibrary\ServicesLibrary.csproj"/>
+    </ItemGroup>
+
+</Project>
