@@ -1,12 +1,17 @@
-@Any_Issues_HostAddress = http://localhost:5183
+@Any_Issues_HostAddress = https://localhost:7108
 @issueNumber = 1
+
+GET {{Any_Issues_HostAddress}}/api/v1/bitbucket/issues
+Accept: application/json
+
+###
 
 GET {{Any_Issues_HostAddress}}/api/bitbucket/issues
 Accept: application/json
 
 ###
 
-POST {{Any_Issues_HostAddress}}/api/bitbucket/issues
+POST {{Any_Issues_HostAddress}}/api/v1/bitbucket/issues
 Accept: application/json
 
 {
@@ -19,7 +24,7 @@ Accept: application/json
 
 ###
 
-PUT {{Any_Issues_HostAddress}}/api/bitbucket/issues/{{issueNumber}}
+PUT {{Any_Issues_HostAddress}}/api/v1/bitbucket/issues/{{issueNumber}}
 Accept: application/json
 
 {
@@ -32,5 +37,5 @@ Accept: application/json
 
 ###
 
-DELETE {{Any_Issues_HostAddress}}/api/bitbucket/issues/{{issueNumber}}
+DELETE {{Any_Issues_HostAddress}}/api/v1/bitbucket/issues/{{issueNumber}}
 Accept: application/json

@@ -1,6 +1,7 @@
 # Any Issues?
 
 A .NET project for managing Issues via GitHub and Bitbucket APIs.
+- [Project GitHub](https://github.com/PrzemekJurewicz/any-issues)
 
 ## Features
 
@@ -10,6 +11,7 @@ A .NET project for managing Issues via GitHub and Bitbucket APIs.
 
 - Create, update, and close issues on GitHub and Bitbucket
 - Easily extendable for other issue trackers
+- Api Versioning with OpenAPI documentation
 
 ## Prerequisites
 

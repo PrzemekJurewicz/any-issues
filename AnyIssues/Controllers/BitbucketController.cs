@@ -1,9 +1,12 @@
 namespace AnyIssues.Controllers;
-
+    
+[ApiVersion(1)]
 [ApiController]
-[Route("api/bitbucket/issues")]
+[Route("api/[controller]/issues")]
+[Route("api/v{v:apiVersion}/[controller]/issues")]
 public class BitbucketController(BitbucketService bitbucketService) : ControllerBase
 {
+    
     [HttpGet]
     public async Task<IActionResult> ListIssues()
     {
@@ -12,7 +15,7 @@ public class BitbucketController(BitbucketService bitbucketService) : Controller
             ? Content(response.Json, "application/json")
             : Problem($"Bitbucket API returned status code {response.StatusCode}");
     }
-        
+    
     [HttpPost]
     public async Task<IActionResult> CreateIssue()
     {
@@ -22,7 +25,8 @@ public class BitbucketController(BitbucketService bitbucketService) : Controller
             ? Content(response.Json, "application/json")
             : Problem($"Bitbucket API returned status code {response.StatusCode}");
     }
-        
+    
+    [ApiVersion("1.0")]
     [HttpPut("{issueNumber:int}")]
     public async Task<IActionResult> UpdateIssue(int issueNumber)
     {
@@ -32,7 +36,8 @@ public class BitbucketController(BitbucketService bitbucketService) : Controller
             ? Content(response.Json, "application/json")
             : Problem($"Bitbucket API returned status code {response.StatusCode}");
     }
-        
+    
+    [ApiVersion("1.0")]
     [HttpDelete("{issueNumber:int}")]
     public async Task<IActionResult> CloseIssue(int issueNumber)
     {
